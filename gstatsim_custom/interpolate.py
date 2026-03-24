@@ -169,6 +169,8 @@ def sgs(xx, yy, grid, variogram, radius=100e3, num_points=20, ktype='ok', sim_ma
                 out_grid[i,j] = rng.normal(est, np.sqrt(var), 1)
             else:
                 scale = np.sqrt(var)
+                if scale==0:
+                    scale = 1e-5
                 a_transformed, b_transformed = (bounds[0][i,j] - est) / scale, (bounds[1][i,j] - est) / scale
                 out_grid[i,j] = truncnorm.rvs(a_transformed, b_transformed, loc=est, scale=scale, size=1, random_state=rng)
             cond_msk[i,j] = True

@@ -243,13 +243,13 @@ if __name__ == '__main__':
 
     dsv = xr.Dataset(
         data_vars=dict(
-            varr=(('y', 'x'), interp_vars),
-            ranges=(('y', 'x'), interp_ranges),
-            sill=(('y', 'x'), interp_sills),
-            smooth=(('y', 'x'), interp_smooths),
-            major_range=(('y', 'x'), interp_major_ranges),
-            minor_range=(('y', 'x'), interp_minor_ranges),
-            azimuth=(('y', 'x'), interp_azim)
+            varr=(('y', 'x'), interp_vars.astype(np.float32)),
+            ranges=(('y', 'x'), interp_ranges.astype(np.float32)),
+            sill=(('y', 'x'), interp_sills.astype(np.float32)),
+            smooth=(('y', 'x'), interp_smooths.astype(np.float32)),
+            major_range=(('y', 'x'), interp_major_ranges.astype(np.float32)),
+            minor_range=(('y', 'x'), interp_minor_ranges.astype(np.float32)),
+            azimuth=(('y', 'x'), interp_azim.astype(np.float32))
         ),
         coords=dict(
             y=('y', ds.y.values),
