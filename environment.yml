@@ -1,0 +1,21 @@
+name: gstat_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - geopandas
+  - xarray
+  - pyarrow
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - tqdm
+  - verde
+  - earthaccess
+  - jupyter
+  - pip
+  - pip:
+    - gstatsim
